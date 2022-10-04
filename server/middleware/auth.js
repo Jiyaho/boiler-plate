@@ -14,11 +14,9 @@ let auth = (req, res, next) => {
     // 해당 유저가 있는 경우
     req.token = token;
     req.user = user;
+    // req에 token과 user를 넣어주는 이유는 index.js에서 사용할 수 있도록 하는 코드
     next(); // middleware인 auth에서 다음 단계인 save로 넘어가도록 하는 코드
   });
-  // 유저가 있으면 인증 true
-
-  // 유저가 없으면 인증 false
 };
 
 module.exports = { auth };
